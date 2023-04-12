@@ -15,9 +15,9 @@ public class PrintSubarrays {
             System.out.print("[");
             for (int j = 0; j <= i; j++) {
                 if(j != i) {
-                    System.out.print(j + ",");
+                    System.out.print(arr[j] + ",");
                 } else
-                    System.out.print(j);
+                    System.out.print(arr[j]);
             }
             System.out.print("]");
             System.out.println();

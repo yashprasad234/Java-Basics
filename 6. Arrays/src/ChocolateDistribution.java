@@ -1,3 +1,5 @@
+//https://www.geeksforgeeks.org/chocolate-distribution-problem/
+
 import java.util.Arrays;
 
 public class ChocolateDistribution {
