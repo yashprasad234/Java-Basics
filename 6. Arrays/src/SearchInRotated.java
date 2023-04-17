@@ -1,7 +1,7 @@
 public class SearchInRotated {
     public static void main(String[] args) {
         int[] arr = {4,5,6,7,0,1,2};
-        System.out.println(rotatedSearch(arr, 0));
+        System.out.println(search(arr, 0));
     }
 
     static int findPivot(int[] arr) {
@@ -37,6 +37,27 @@ public class SearchInRotated {
                 end = mid - 1;
             else
                 st = mid + 1;
+        }
+        return -1;
+    }
+
+    static int search(int[] arr, int target) {
+        int st = 0, end = arr.length-1;
+        while (st <= end) {
+            int mid = st + (end - st) / 2;
+            if(arr[mid] == target)
+                return mid;
+            if(arr[mid] >= arr[0]) {  // To determine which half of the array we are in i.e, increasing half or decreasing half
+                if(target < arr[mid] && target >= arr[st])
+                    end = mid - 1;
+                else
+                    st = mid + 1;
+            } else {
+                if(target > arr[mid] && target <= arr[end])
+                    st = mid + 1;
+                else
+                    end = mid - 1;
+            }
         }
         return -1;
     }
